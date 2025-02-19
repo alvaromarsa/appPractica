@@ -3,6 +3,7 @@ import { Component } from "@angular/core";
 
 @Component({
   selector: 'app-subnautica',
+  styleUrl: 'subnautica.component.css',
   template:`
 
   <h1>Hola Subnautica</h1>
@@ -19,11 +20,12 @@ import { Component } from "@angular/core";
      <button (click)="resetColor()">Volver a color blanco</button>
 
      <hr>
+     <!--
   <h2>Modulos del submarino</h2>
   <input type="text" [(ngModel)]="moduloSubmarino" name="moduloSubmarino" >
     <button (click="")>Agregar modulo</button>
    <h4>{{seamoth.modulo[0]}}</h4>
-
+-->
   `
 
 })
