@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class SubmarinosComponent {
 
+
 }
 
 export interface Submarino {

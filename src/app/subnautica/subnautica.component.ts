@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { SubmarinosComponent } from "./submarinos/submarinos.component";
+
 
 @Component({
   selector: 'app-subnautica',
@@ -9,12 +9,20 @@ import { SubmarinosComponent } from "./submarinos/submarinos.component";
 
   <h2>Vamos a modificar datos de los submarinos de Subnautica</h2>
 
-  <h3>{{seamoth.name}}</h3>
-  <h4>{{seamoth.color}}</h4>
-  <input type="text" name="colorSubmarino" id="inputColor">
-     <button (click)="cambiarColor('negro')">Cambiar color</button>
-     <button (click)="reset()">Volver a color blanco</button>
+  <h2>Nombre del submarino</h2>
+   <h3>{{seamoth.name}}</h3>
+  <h2>Color del submarino</h2>
+    <h4>{{seamoth.color}}</h4>
 
+   <input type="text" [(ngModel)]="colorSubmarino" name="colorSubmarino" id="inputColor">
+     <button (click)="cambiarColor()">Cambiar color</button>
+     <button (click)="resetColor()">Volver a color blanco</button>
+
+     <hr>
+  <h2>Modulos del submarino</h2>
+  <input type="text" [(ngModel)]="moduloSubmarino" name="moduloSubmarino" >
+    <button (click="")>Agregar modulo</button>
+   <h4>{{seamoth.modulo[0]}}</h4>
 
   `
 
@@ -22,26 +30,36 @@ import { SubmarinosComponent } from "./submarinos/submarinos.component";
 
 export class SubnauticaComponent {
 
+  colorSubmarino : string = '';
+  moduloSubmarino: string = '';
+
    public seamoth: Submarino = {
 
     name: 'Seamoth',
     color: 'Blanco',
+    modulo: ['Modulo de profundidad']
 
   };
 
-  cambiarColor (colorNuevo : string) : void {
+  agregarModulo () : void {
 
-    this.seamoth.color
-
-    this.seamoth.color = colorNuevo;
+      this.seamoth.modulo.push(this.moduloSubmarino)
 
 
-  }
+  };
 
-  reset ():void {
 
-    this.seamoth.color = "blanco";
-  }
+  cambiarColor () : void {
+
+    this.seamoth.color = this.colorSubmarino;
+
+
+  };
+
+  resetColor ():void {
+
+    this.seamoth.color = "Blanco";
+  };
 
 
 
@@ -50,7 +68,8 @@ export class SubnauticaComponent {
 export interface Submarino {
 
   name: string;
-  color?: string;
+  color: string;
+  modulo: [string];
 
 
 }
