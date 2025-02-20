@@ -20,12 +20,16 @@ import { Component } from "@angular/core";
      <button (click)="resetColor()">Volver a color blanco</button>
 
      <hr>
-     <!--
+
   <h2>Modulos del submarino</h2>
   <input type="text" [(ngModel)]="moduloSubmarino" name="moduloSubmarino" >
-    <button (click="")>Agregar modulo</button>
-   <h4>{{seamoth.modulo[0]}}</h4>
--->
+    <button (click)="agregarModulo()">Agregar modulo</button>
+    <button (click)="resetModulo()">Volver a configuracion de fabrica</button>
+    <li *ngFor="let i of seamoth.modulo">
+      {{i}}
+    </li>
+
+
   `
 
 })
@@ -47,6 +51,12 @@ export class SubnauticaComponent {
 
       this.seamoth.modulo.push(this.moduloSubmarino)
 
+
+  };
+
+  resetModulo () : void {
+
+    this.seamoth.modulo.splice(1);
 
   };
 
