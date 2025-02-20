@@ -13,7 +13,7 @@ import { Component } from "@angular/core";
   <h2>Nombre del submarino</h2>
    <h3>{{seamoth.name}}</h3>
   <h2>Color del submarino</h2>
-    <h4>{{seamoth.color}}</h4>
+    <h3>{{seamoth.color}}</h3>
 
    <input type="text" [(ngModel)]="colorSubmarino" name="colorSubmarino" id="inputColor">
      <button (click)="cambiarColor()">Cambiar color</button>
@@ -22,12 +22,16 @@ import { Component } from "@angular/core";
      <hr>
 
   <h2>Modulos del submarino</h2>
+
+  <li *ngFor="let i of seamoth.modulo">
+      {{i}}
+  </li>
+
   <input type="text" [(ngModel)]="moduloSubmarino" name="moduloSubmarino" >
+
     <button (click)="agregarModulo()">Agregar modulo</button>
     <button (click)="resetModulo()">Volver a configuracion de fabrica</button>
-    <li *ngFor="let i of seamoth.modulo">
-      {{i}}
-    </li>
+
 
 
   `
