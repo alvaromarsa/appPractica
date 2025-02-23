@@ -23,14 +23,29 @@ h3 {
 
 input {
   text-align: center;
-  display: block;
-  margin: auto;
+  margin-left:45%;
+  border: 2px solid yellow;
+  border-radius: 5px;
+  background-color: aqua;
 }
+
 
 li {
   color:deepskyblue;
   text-align: center;
   font-size: large;
+}
+
+div {
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+}
+
+p {
+  color:red;
 }
 
 :host {

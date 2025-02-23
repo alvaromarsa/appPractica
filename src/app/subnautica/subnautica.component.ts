@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-
+import { FormsModule } from "@angular/forms";
 
 @Component({
   selector: 'app-subnautica',
@@ -15,11 +15,20 @@ import { Component } from "@angular/core";
   <h2>Color del submarino</h2>
     <h3>{{seamoth.color}}</h3>
 
-   <input type="text" [(ngModel)]="colorSubmarino" name="colorSubmarino" id="inputColor">
+  <div>
+   <input type="text" [(ngModel)]="colorSubmarino" name="colorSubmarino" id="inputColor" >
+   <p *ngIf="!colorSubmarino">Introduzca un color</p>
+  </div>
      <button (click)="cambiarColor()">Cambiar color</button>
      <button (click)="resetColor()">Volver a color blanco</button>
 
-     <hr>
+
+  <hr>
+
+  <div>
+
+
+  </div>
 
   <h2>Modulos del submarino</h2>
 
@@ -67,7 +76,31 @@ export class SubnauticaComponent {
 
   cambiarColor () : void {
 
-    this.seamoth.color = this.colorSubmarino;
+    let hayColor : string = this.colorSubmarino;
+    const colores: string[] = ["azul", "verde", "amarillo", "negro", "rojo"];
+
+    if (!hayColor){
+      return;
+    }
+    else {
+
+      let colorValido = false;
+
+      for (let i of colores){
+
+        if(i == this.colorSubmarino.toLowerCase()){
+
+          this.seamoth.color = this.colorSubmarino.toLowerCase();
+          colorValido = true;
+          break;
+
+        }
+
+      }
+      if (!colorValido) {
+        alert('El color no es válido');
+      }
+    }
 
 
   };
