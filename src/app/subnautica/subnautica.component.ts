@@ -1,6 +1,15 @@
 import { Component } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 
+export interface Submarino {
+
+  name: string;
+  color: string;
+  modulo: [string];
+  capacidadModulos: number;
+
+}
+
 @Component({
   selector: 'app-subnautica',
   styleUrl: 'subnautica.component.css',
@@ -74,6 +83,7 @@ export class SubnauticaComponent {
     modulo: ['Modulo de escaner'],
     capacidadModulos: 5
   }
+
 
   submarinos: Submarino[] = [this.seamoth, this.cyclops];
   submarinoSeleccionado: Submarino = this.seamoth;
@@ -154,13 +164,5 @@ export class SubnauticaComponent {
 
 }
 
-export interface Submarino {
 
-  name: string;
-  color: string;
-  modulo: [string];
-  capacidadModulos: number;
-
-
-}
 

@@ -1,0 +1,29 @@
+:host {
+  display:block;
+   width: 100%;
+  height: 100%;
+  background-color: pink;
+}
+
+.scratch-card {
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+
+.premio {
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin-left: 100%;
+}
+
+.canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin-left: 100%;
+  cursor: crosshair;
+}

@@ -8,4 +8,6 @@ import { SubmarinosComponent } from './subnautica/submarinos/submarinos.componen
 })
 export class AppComponent {
   title = 'appPractica';
+
+
 }
