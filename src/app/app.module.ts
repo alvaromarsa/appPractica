@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { SubnauticaComponent } from './subnautica/subnautica.component';
 import { SubmarinosComponent } from './subnautica/submarinos/submarinos.component';
 import { FormsModule } from '@angular/forms';
-import { UnicornioComponent } from './unicornio/unicornio.component';
+import { UnicornioComponent } from './pages/unicornio/unicornio.component';
 
 @NgModule({
   declarations: [
