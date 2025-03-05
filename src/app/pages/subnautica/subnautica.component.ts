@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { FormsModule } from "@angular/forms";
+import { CommonModule } from "@angular/common";
 
 export interface Submarino {
 
@@ -12,52 +13,10 @@ export interface Submarino {
 
 @Component({
   selector: 'app-subnautica',
-  styleUrl: 'subnautica.component.css',
-  template:`
-
-  <h1>Hola Subnautica</h1>
-
-  <h2>Vamos a modificar datos de los submarinos de Subnautica</h2>
-<div class="selectSubmarinos">
-  <select (change)="actualizarSubmarino($event)">
-  <option *ngFor="let submarino of submarinos" [value]="submarino.name"> {{submarino.name}}</option>
-  </select>
-</div>
-  <h2>Nombre del submarino</h2>
-   <h3>{{submarinoSeleccionado.name}}</h3>
-  <h2>Color del submarino</h2>
-    <h3>{{submarinoSeleccionado.color}}</h3>
-
-  <div>
-   <input type="text" [(ngModel)]="colorSubmarino" name="colorSubmarino" id="inputColor" >
-   <p *ngIf="!colorSubmarino">Introduzca un color</p>
-  </div>
-     <button (click)="cambiarColor()">Cambiar color</button>
-     <button (click)="resetColor()">Volver a color blanco</button>
-
-
-  <hr>
-
-  <div class="modulos">
-    <div class="listaModulos">
-      <li *ngFor="let i of submarinoSeleccionado.modulo">
-          {{i}}
-      </li>
-    </div>
-    <div class="selectorModulos">
-      <label for="modulo">Selecciona un modulo:</label>
-      <select id="modulo" [(ngModel)]="moduloSeleccionado">
-        <option *ngFor="let i of moduloSubmarino">{{ i }}</option>
-      </select>
-    </div>
-    <div class="botones modulos">
-      <button (click)="agregarModulo()">Agregar modulo</button>
-      <button (click)="resetModulo()">Volver a configuracion de fabrica</button>
-    </div>
-
-  </div>
-
-  `
+  styleUrl: './subnautica.component.css',
+  standalone:true,
+  imports: [FormsModule, CommonModule],
+  templateUrl: './subnautica.component.html'
 
 })
 
