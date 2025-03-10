@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Signal, signal } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { CommonModule } from "@angular/common";
 
@@ -26,6 +26,13 @@ export class SubnauticaComponent {
   moduloSubmarino: string[] = ["Módulo de escudo","Módulo de recarga","Módulo de torpedos", "Módulo de profundidad MKII"];
   moduloSeleccionado: string = '';
 
+  color = signal('Blanco');
+  modulo = signal('Modulo de profundidad');
+
+  submarinosObjetos = signal<Submarino[]>([
+    { name: 'Seamoth', color: 'Blanco', modulo: ['Modulo de profundidad'], capacidadModulos: 3},
+    { name: 'Cyclops', color: 'Azul', modulo: ['Modulo de escaner'], capacidadModulos: 5},
+  ]);
 
    public seamoth: Submarino = {
 
@@ -116,7 +123,7 @@ export class SubnauticaComponent {
 
   resetColor ():void {
 
-    this.submarinoSeleccionado.color = "Blanco";
+    this.color.set('Blanco');
   };
 
 
