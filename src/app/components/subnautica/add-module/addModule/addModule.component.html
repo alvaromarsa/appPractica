@@ -1,0 +1,21 @@
+
+
+
+<div class="modulos">
+  <div class="listaModulos">
+    <li *ngFor="let i of submarinoSeleccionado.modulo">
+        {{i}}
+    </li>
+  </div>
+  <div class="selectorModulos">
+    <label for="modulo">Selecciona un modulo:</label>
+    <select id="modulo" [(ngModel)]="moduloSeleccionado">
+      <option *ngFor="let i of moduloSubmarino">{{ i }}</option>
+    </select>
+  </div>
+  <div class="botones modulos">
+    <button (click)="agregarModulo()">Agregar modulo</button>
+    <button (click)="resetModulo()">Volver a configuracion de fabrica</button>
+  </div>
+
+</div>

@@ -1,0 +1,8 @@
+
+<section>
+  <div>
+    <select (change)="actualizarSubmarino($event)">
+      <option *ngFor="let submarino of submarinos" [value]="submarino.name"> {{submarino.name}}</option>
+    </select>
+  </div>
+</section>

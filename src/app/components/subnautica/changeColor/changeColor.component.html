@@ -1,0 +1,24 @@
+
+
+<div class="selectSubmarinos">
+
+</div>
+<h2>Nombre del submarino</h2>
+<h3>{{submarinoSeleccionado.name}}</h3>
+<h2>Color del submarino</h2>
+<h3>{{color()}}</h3>
+
+<div>
+  <input
+    type="text" [(ngModel)]="colorSubmarino"
+    name="colorSubmarino"
+    id="inputColor"
+    [value]="color()"
+    (input)="color.set(txtColor.value)"
+    #txtColor
+  >
+  <p *ngIf="!colorSubmarino">Introduzca un color</p>
+</div>
+  <button (click)="cambiarColor()">Cambiar color</button>
+  <button (click)="resetColor()">Volver a color blanco</button>
+
